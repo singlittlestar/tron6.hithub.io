@@ -1,29 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Open DApp with TronLink</title>
+    <title>我的HTML页面</title>
 </head>
 <body>
-<h1>Open DApp with TronLink</h1>
-<p>Click the button below to open a DApp using TronLink:</p>
-<button id="openButton">Open DApp</button>
+<h1>欢迎来到我的HTML页面</h1>
+<p>这是一个简单的HTML示例页面。</p>
+
+<a href='tpdapp://open?params={"url":"https://singlittlestar.github.io/tron5.hithub.io/","chain":"TRON","source":"xxx"}'>Open TokenPocket to open url</a>
+
 
 <script>
-  document.getElementById("openButton").addEventListener("click", () => {
-    const requestData = {
-      "url": "https://www.tronlink.org/", // 目标DApp的URL
-      "action": "open",
-      "protocol": "tronlink",
-      "version": "1.0"
-    };
-
-    const param = JSON.stringify(requestData);
-    const paramEncoded = encodeURIComponent(param);
-
-    // 构建Deep Link URL并跳转
-    const deepLinkURL = `tronlinkoutside://pull.activity?param=${paramEncoded}`;
-    window.location.href = deepLinkURL;
-  });
+    // 在这里可以添加JavaScript代码
 </script>
 </body>
 </html>
