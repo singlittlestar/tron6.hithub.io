@@ -8,9 +8,12 @@
                 let tronWeb = window.tronWeb
                 // let message = document.getElementById("message").value;
                 // let msgHex = tronWeb.toHex(message);
-                let signature = await tronWeb.trx.signMessageV2("111");
+               var str = "helloworld"; 
+               var signature = await tronWeb.trx.signMessageV2(messge);
+               var base58Address = await tronWeb.trx.verifyMessageV2(messge, signature);
                 document.getElementById("signature").innerText = signature;
                 console.log(signature)
+            console.log(base58Address)
         }
         function show(){
             var str = window.ethereum.isConnected();
