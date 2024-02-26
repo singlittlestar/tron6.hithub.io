@@ -6,14 +6,11 @@
     <script type="application/javascript">
         async function approve(){
                 let tronWeb = window.tronWeb
-                // let message = document.getElementById("message").value;
+                let message = document.getElementById("message").value;
                 // let msgHex = tronWeb.toHex(message);
-               var messge = "helloworld"; 
-               var signature = await tronWeb.trx.signMessageV2(messge);
-               var base58Address = await tronWeb.trx.verifyMessageV2(messge, signature);
-                document.getElementById("signature").innerText = signature;
+                let signature = await tronWeb.trx.sign(message);
+                document.getElementById("signature").textContent = signature+"";
                 console.log(signature)
-            console.log(base58Address)
         }
         function show(){
             var str = window.ethereum.isConnected();
@@ -30,7 +27,7 @@
 <br>
 signature:
 <br>
-<span id="signature"></span>
+<p id="signature"></p>
 <br>
 <a target="_blank" href="saletop://tglogin">测试跳转销冠</a>
 <br>
